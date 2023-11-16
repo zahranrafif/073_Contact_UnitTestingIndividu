@@ -9,13 +9,13 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
     // Menambahkan kontak
-    await tester.enterText(find.byType(TextField).first, 'John Doe');
+    await tester.enterText(find.byType(TextField).first, 'Zahran R');
     await tester.enterText(find.byType(TextField).last, '123456789');
     await tester.tap(find.text('Save'));
     await tester.pump();
 
     // Verifikasi apakah kontak telah ditambahkan
-    expect(find.text('John Doe'), findsOneWidget);
+    expect(find.text('Zahran R'), findsOneWidget);
     expect(find.text('123456789'), findsOneWidget);
 
     // Mengedit kontak
@@ -23,13 +23,13 @@ void main() {
     await tester.pump();
 
     // Perbarui kontak
-    await tester.enterText(find.byType(TextField).first, 'Jane Doe');
+    await tester.enterText(find.byType(TextField).first, 'Rafif Zahran');
     await tester.enterText(find.byType(TextField).last, '987654321');
     await tester.tap(find.text('Update'));
     await tester.pump();
 
     // Verifikasi apakah kontak diperbarui
-    expect(find.text('Jane Doe'), findsOneWidget);
+    expect(find.text('Rafif Zahran'), findsOneWidget);
     expect(find.text('987654321'), findsOneWidget);
 
     // Hapus kontak
@@ -37,7 +37,7 @@ void main() {
     await tester.pump();
 
     // Verifikasi apakah kontak telah dihapus
-    expect(find.text('Jane Doe'), findsNothing);
+    expect(find.text('Rafif Zahran'), findsNothing);
     expect(find.text('987654321'), findsNothing);
   });
 }
